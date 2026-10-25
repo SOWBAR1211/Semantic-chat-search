@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Semantic Chat Search (local)",
+  "version": "0.2",
+  "description": "Semantic search for chats, running only on your own computer.",
+  "permissions": ["downloads", "storage"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "https://web.whatsapp.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
